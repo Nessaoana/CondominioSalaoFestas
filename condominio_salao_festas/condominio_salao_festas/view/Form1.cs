@@ -1,4 +1,6 @@
-﻿using System;
+﻿using condominio_salao_festas.model;
+using condominio_salao_festas.model.db_context;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +14,8 @@ namespace condominio_salao_festas
 {
     public partial class Form1 : Form
     {
+        private ApplicationDBContext ctx = new ApplicationDBContext();
+
         public Form1()
         {
             InitializeComponent();
