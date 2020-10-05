@@ -170,15 +170,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\20201005222516_Usuarios.cs" />
-    <Compile Include="Migrations\20201005222516_Usuarios.designer.cs">
-      <DependentUpon>20201005222516_Usuarios.cs</DependentUpon>
+    <Compile Include="Dominio\Interfaces\IRepository.cs" />
+    <Compile Include="Infra.Data\ApplicationDBContext.cs" />
+    <Compile Include="Infra.Data\BaseRepository.cs" />
+    <Compile Include="Dominio\Entidades\EntidadeBase.cs" />
+    <Compile Include="Dominio\Entidades\Usuario.cs" />
+    <Compile Include="Dominio\Entidades\UsuarioAdmin.cs" />
+    <Compile Include="Migrations\20201005232702_inicial.cs" />
+    <Compile Include="Migrations\20201005232702_inicial.designer.cs">
+      <DependentUpon>20201005232702_inicial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20201005232828_tste.cs" />
+    <Compile Include="Migrations\20201005232828_tste.designer.cs">
+      <DependentUpon>20201005232828_tste.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20201005232955_MigracaoInicial.cs" />
+    <Compile Include="Migrations\20201005232955_MigracaoInicial.designer.cs">
+      <DependentUpon>20201005232955_MigracaoInicial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\ApplicationDBContextModelSnapshot.cs" />
-    <Compile Include="model\db-context\ApplicationDBContext.cs" />
-    <Compile Include="model\Usuario.cs" />
-    <Compile Include="model\UsuarioAdmin.cs" />
-    <Compile Include="model\UsuarioBase.cs" />
     <Compile Include="view\CadastroAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -222,9 +232,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="controller\implementacao\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Data.SqlClient.SNI.1.1.0\build\net46\Microsoft.Data.SqlClient.SNI.targets" Condition="Exists('..\packages\Microsoft.Data.SqlClient.SNI.1.1.0\build\net46\Microsoft.Data.SqlClient.SNI.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

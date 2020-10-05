@@ -1,5 +1,6 @@
 ﻿using condominio_salao_festas.model;
 using condominio_salao_festas.model.db_context;
+using condominio_salao_festas.view;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -38,6 +39,14 @@ namespace condominio_salao_festas
 
         private void button3_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            CadastroAdmin cadastro = new CadastroAdmin();
+
+            cadastro.ShowDialog();
 
         }
     }

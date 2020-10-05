@@ -2,7 +2,7 @@
 
 namespace condominio_salao_festas.Migrations
 {
-    public partial class Usuarios : Migration
+    public partial class MigracaoInicial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -10,20 +10,23 @@ namespace condominio_salao_festas.Migrations
                 name: "Moradores",
                 columns: table => new
                 {
-                    Apartamento = table.Column<string>(nullable: false),
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Apartamento = table.Column<string>(nullable: true),
                     Nome = table.Column<string>(nullable: true),
                     Senha = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Moradores", x => x.Apartamento);
+                    table.PrimaryKey("PK_Moradores", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
                 name: "UsuariosAdmin",
                 columns: table => new
                 {
-                    Id = table.Column<string>(nullable: false),
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     Nome = table.Column<string>(nullable: true),
                     Senha = table.Column<string>(nullable: true),
                     Email = table.Column<string>(nullable: true)

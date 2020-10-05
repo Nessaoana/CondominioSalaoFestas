@@ -9,8 +9,8 @@ using condominio_salao_festas.model.db_context;
 namespace condominio_salao_festas.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    [Migration("20201005222516_Usuarios")]
-    partial class Usuarios
+    [Migration("20201005232828_tste")]
+    partial class tste
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -22,8 +22,13 @@ namespace condominio_salao_festas.Migrations
 
             modelBuilder.Entity("condominio_salao_festas.model.Usuario", b =>
                 {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
                     b.Property<string>("Apartamento")
-                        .HasColumnType("nvarchar(450)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Nome")
                         .HasColumnType("nvarchar(max)");
@@ -31,15 +36,17 @@ namespace condominio_salao_festas.Migrations
                     b.Property<string>("Senha")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Apartamento");
+                    b.HasKey("Id");
 
                     b.ToTable("Moradores");
                 });
 
             modelBuilder.Entity("condominio_salao_festas.model.UsuarioAdmin", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)");

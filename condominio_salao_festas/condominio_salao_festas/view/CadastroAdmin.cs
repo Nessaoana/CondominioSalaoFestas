@@ -1,4 +1,5 @@
-﻿using condominio_salao_festas.model;
+﻿using condominio_salao_festas.Dominio.Interfaces;
+using condominio_salao_festas.model;
 using condominio_salao_festas.model.db_context;
 using System;
 using System.Collections.Generic;
@@ -14,7 +15,7 @@ namespace condominio_salao_festas.view
 {
     public partial class CadastroAdmin : Form
     {
-        private ApplicationDBContext bancoDados = new ApplicationDBContext();
+        private BaseRepository<UsuarioAdmin> repositorio = new BaseRepository<UsuarioAdmin>();
 
         public CadastroAdmin()
         {
@@ -32,25 +33,11 @@ namespace condominio_salao_festas.view
 
             usuario.Nome = txtNomeValor.Text;
             usuario.Email = txtEmailValor.Text;
+            usuario.Senha = txtSenhaValor.Text;
 
-            if(txtSenhaValor.Text == null)
-            {
-                validador.Text = "Senha é obrigatório";
-            }
-            else
-            {
-                usuario.Senha = txtSenhaValor.Text;
-            }
+            repositorio.Insert(usuario);
 
-            try
-            {
-                bancoDados.Add<UsuarioAdmin>(usuario);
-            }catch(Exception ex)
-            {
-                validador.Text = ex.Message;
-            }
-            
-
+            this.Close();
         }
 
         private void nomeValor_TextChanged(object sender, EventArgs e)
