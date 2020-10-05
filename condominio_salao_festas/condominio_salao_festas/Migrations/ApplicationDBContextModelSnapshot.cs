@@ -31,7 +31,26 @@ namespace condominio_salao_festas.Migrations
 
                     b.HasKey("Apartamento");
 
-                    b.ToTable("Usuarios");
+                    b.ToTable("Moradores");
+                });
+
+            modelBuilder.Entity("condominio_salao_festas.model.UsuarioAdmin", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Nome")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Senha")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("UsuariosAdmin");
                 });
 #pragma warning restore 612, 618
         }

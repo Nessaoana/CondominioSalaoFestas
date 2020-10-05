@@ -9,8 +9,8 @@ using condominio_salao_festas.model.db_context;
 namespace condominio_salao_festas.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    [Migration("20200929024051_MigracaoInicial")]
-    partial class MigracaoInicial
+    [Migration("20201005222516_Usuarios")]
+    partial class Usuarios
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -33,7 +33,26 @@ namespace condominio_salao_festas.Migrations
 
                     b.HasKey("Apartamento");
 
-                    b.ToTable("Usuarios");
+                    b.ToTable("Moradores");
+                });
+
+            modelBuilder.Entity("condominio_salao_festas.model.UsuarioAdmin", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Nome")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Senha")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("UsuariosAdmin");
                 });
 #pragma warning restore 612, 618
         }

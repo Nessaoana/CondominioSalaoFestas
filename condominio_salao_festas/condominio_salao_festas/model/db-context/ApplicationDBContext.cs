@@ -20,11 +20,14 @@ namespace condominio_salao_festas.model.db_context
         // exemplo:
         // public DbSet<Aluno> Alunos { get; set; }
 
-        public System.Data.Entity.DbSet<Usuario> Usuarios { get; set; }
+        public Microsoft.EntityFrameworkCore.DbSet<UsuarioAdmin> UsuariosAdmin { get; set; }
+        public Microsoft.EntityFrameworkCore.DbSet<Usuario> Moradores { get; set; }
 
         // Toda vez que adicionarem uma nova tabela neste arquivo rode o comando abaixo
+        // add-migration descricao 
+        // ex: add-migration Agendamento
         // Update-Database
-        // ele vai criar o banco de dados 
+        // ele vai criar o banco de dados/ atualizar as tabelas 
         // ps: precisa instalar o sql server sim..
 
 
