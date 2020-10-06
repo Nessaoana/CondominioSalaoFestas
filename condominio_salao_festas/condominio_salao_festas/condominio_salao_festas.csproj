@@ -170,6 +170,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dominio\Entidades\Agendamento.cs" />
     <Compile Include="Dominio\Interfaces\IRepository.cs" />
     <Compile Include="Infra.Data\ApplicationDBContext.cs" />
     <Compile Include="Infra.Data\BaseRepository.cs" />
@@ -195,6 +196,12 @@
     <Compile Include="view\CadastroAdmin.Designer.cs">
       <DependentUpon>CadastroAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="view\CadastrarAgendamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\CadastrarAgendamento.Designer.cs">
+      <DependentUpon>CadastrarAgendamento.cs</DependentUpon>
+    </Compile>
     <Compile Include="view\Inicial.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -212,6 +219,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="view\CadastrarAgendamento.resx">
+      <DependentUpon>CadastrarAgendamento.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="view\CadastroAdmin.resx">
       <DependentUpon>CadastroAdmin.cs</DependentUpon>
     </EmbeddedResource>
