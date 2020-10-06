@@ -25,6 +25,8 @@ namespace condominio_salao_festas.model.db_context
         public Microsoft.EntityFrameworkCore.DbSet<Usuario> Moradores { get; set; }
         public Microsoft.EntityFrameworkCore.DbSet<Agendamento> Agendamentos { get; set; }
 
+        public Microsoft.EntityFrameworkCore.DbSet<Apartamento> apartamentos { get; set; }
+
         // Toda vez que adicionarem uma nova tabela neste arquivo rode o comando abaixo
         // add-migration descricao 
         // ex: add-migration Agendamento

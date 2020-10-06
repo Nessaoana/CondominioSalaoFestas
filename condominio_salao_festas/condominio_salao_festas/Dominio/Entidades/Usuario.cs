@@ -11,6 +11,7 @@ namespace condominio_salao_festas.model
 {   
     public class Usuario : EntidadeBase
     {
+        [ForeignKey("Apartamento")]
         public string Apartamento { get; set; }
         public string Nome { get; set; }
         public string Senha { get; set; }

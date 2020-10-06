@@ -9,9 +9,10 @@ using System.Threading.Tasks;
 
 namespace condominio_salao_festas.Dominio.Entidades
 {
-    class Agendamento : EntidadeBase
+    public class Agendamento : EntidadeBase
     {
         public string DataAgendamento { get; set; }
+        [ForeignKey("Apartamento")]
         public string ApartamentoRef { get; set; }
     }
 }
