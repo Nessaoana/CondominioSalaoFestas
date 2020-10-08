@@ -158,6 +158,7 @@
     <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
     </Reference>
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -169,18 +170,66 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\20200929024051_MigracaoInicial.cs" />
-    <Compile Include="Migrations\20200929024051_MigracaoInicial.designer.cs">
-      <DependentUpon>20200929024051_MigracaoInicial.cs</DependentUpon>
+    <Compile Include="Dominio\Entidades\Agendamento.cs" />
+    <Compile Include="Dominio\Entidades\Apartamento.cs" />
+    <Compile Include="Dominio\Interfaces\IRepository.cs" />
+    <Compile Include="Infra.Data\ApplicationDBContext.cs" />
+    <Compile Include="Infra.Data\BaseRepository.cs" />
+    <Compile Include="Dominio\Entidades\EntidadeBase.cs" />
+    <Compile Include="Dominio\Entidades\Usuario.cs" />
+    <Compile Include="Dominio\Entidades\UsuarioAdmin.cs" />
+    <Compile Include="Migrations\20201005232702_inicial.cs" />
+    <Compile Include="Migrations\20201005232702_inicial.designer.cs">
+      <DependentUpon>20201005232702_inicial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20201005232828_tste.cs" />
+    <Compile Include="Migrations\20201005232828_tste.designer.cs">
+      <DependentUpon>20201005232828_tste.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20201005232955_MigracaoInicial.cs" />
+    <Compile Include="Migrations\20201005232955_MigracaoInicial.designer.cs">
+      <DependentUpon>20201005232955_MigracaoInicial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20201006024156_criando agendamento.cs" />
+    <Compile Include="Migrations\20201006024156_criando agendamento.designer.cs">
+      <DependentUpon>20201006024156_criando agendamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20201006025130_ajuste do tipo da variavel.cs" />
+    <Compile Include="Migrations\20201006025130_ajuste do tipo da variavel.designer.cs">
+      <DependentUpon>20201006025130_ajuste do tipo da variavel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20201006030141_criado entidade apartamento.cs" />
+    <Compile Include="Migrations\20201006030141_criado entidade apartamento.designer.cs">
+      <DependentUpon>20201006030141_criado entidade apartamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20201006030223_criado entidade apartamento e arrumado.cs" />
+    <Compile Include="Migrations\20201006030223_criado entidade apartamento e arrumado.designer.cs">
+      <DependentUpon>20201006030223_criado entidade apartamento e arrumado.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\ApplicationDBContextModelSnapshot.cs" />
-    <Compile Include="model\db-context\ApplicationDBContext.cs" />
-    <Compile Include="model\Usuario.cs" />
-    <Compile Include="view\Form1.cs">
+    <Compile Include="view\CadastroAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="view\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="view\CadastroAdmin.Designer.cs">
+      <DependentUpon>CadastroAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\CadastrarAgendamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\CadastrarAgendamento.Designer.cs">
+      <DependentUpon>CadastrarAgendamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\CancelarAgendamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\CancelarAgendamento.Designer.cs">
+      <DependentUpon>CancelarAgendamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\Inicial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\Inicial.Designer.cs">
+      <DependentUpon>Inicial.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -193,6 +242,18 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="view\CadastrarAgendamento.resx">
+      <DependentUpon>CadastrarAgendamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\CadastroAdmin.resx">
+      <DependentUpon>CadastroAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\CancelarAgendamento.resx">
+      <DependentUpon>CancelarAgendamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\Inicial.resx">
+      <DependentUpon>Inicial.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -207,9 +268,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="controller\implementacao\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Data.SqlClient.SNI.1.1.0\build\net46\Microsoft.Data.SqlClient.SNI.targets" Condition="Exists('..\packages\Microsoft.Data.SqlClient.SNI.1.1.0\build\net46\Microsoft.Data.SqlClient.SNI.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

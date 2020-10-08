@@ -1,18 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Drawing;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace condominio_salao_festas.model
 {
-    public class Usuario
+    public abstract class EntidadeBase
     {
-        public string Nome {get; set;}
         [Key]
-        public string Apartamento { get; set; }
-        public string Senha { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public virtual int Id { get; set; }
     }
 }

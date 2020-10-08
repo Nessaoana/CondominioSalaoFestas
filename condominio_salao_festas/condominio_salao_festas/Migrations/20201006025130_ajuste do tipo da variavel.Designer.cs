@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using condominio_salao_festas.model.db_context;
 
 namespace condominio_salao_festas.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    partial class ApplicationDBContextModelSnapshot : ModelSnapshot
+    [Migration("20201006025130_ajuste do tipo da variavel")]
+    partial class ajustedotipodavariavel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -34,21 +36,6 @@ namespace condominio_salao_festas.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Agendamentos");
-                });
-
-            modelBuilder.Entity("condominio_salao_festas.Dominio.Entidades.Apartamento", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("NumeroApartamento")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("apartamentos");
                 });
 
             modelBuilder.Entity("condominio_salao_festas.model.Usuario", b =>

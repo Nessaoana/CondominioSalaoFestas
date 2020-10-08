@@ -9,7 +9,7 @@ using condominio_salao_festas.model.db_context;
 namespace condominio_salao_festas.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    [Migration("20200929024051_MigracaoInicial")]
+    [Migration("20201005232955_MigracaoInicial")]
     partial class MigracaoInicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -22,8 +22,13 @@ namespace condominio_salao_festas.Migrations
 
             modelBuilder.Entity("condominio_salao_festas.model.Usuario", b =>
                 {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
                     b.Property<string>("Apartamento")
-                        .HasColumnType("nvarchar(450)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Nome")
                         .HasColumnType("nvarchar(max)");
@@ -31,9 +36,30 @@ namespace condominio_salao_festas.Migrations
                     b.Property<string>("Senha")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Apartamento");
+                    b.HasKey("Id");
 
-                    b.ToTable("Usuarios");
+                    b.ToTable("Moradores");
+                });
+
+            modelBuilder.Entity("condominio_salao_festas.model.UsuarioAdmin", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Nome")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Senha")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("UsuariosAdmin");
                 });
 #pragma warning restore 612, 618
         }

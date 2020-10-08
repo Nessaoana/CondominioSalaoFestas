@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using condominio_salao_festas.Dominio.Entidades;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -20,11 +21,17 @@ namespace condominio_salao_festas.model.db_context
         // exemplo:
         // public DbSet<Aluno> Alunos { get; set; }
 
-        public System.Data.Entity.DbSet<Usuario> Usuarios { get; set; }
+        public Microsoft.EntityFrameworkCore.DbSet<UsuarioAdmin> UsuariosAdmin { get; set; }
+        public Microsoft.EntityFrameworkCore.DbSet<Usuario> Moradores { get; set; }
+        public Microsoft.EntityFrameworkCore.DbSet<Agendamento> Agendamentos { get; set; }
+
+        public Microsoft.EntityFrameworkCore.DbSet<Apartamento> apartamentos { get; set; }
 
         // Toda vez que adicionarem uma nova tabela neste arquivo rode o comando abaixo
+        // add-migration descricao 
+        // ex: add-migration Agendamento
         // Update-Database
-        // ele vai criar o banco de dados 
+        // ele vai criar o banco de dados/ atualizar as tabelas 
         // ps: precisa instalar o sql server sim..
 
 
