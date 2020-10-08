@@ -206,7 +206,21 @@
     <Compile Include="Migrations\20201006030223_criado entidade apartamento e arrumado.designer.cs">
       <DependentUpon>20201006030223_criado entidade apartamento e arrumado.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20201008213505_teste sem chave estrangeira.cs" />
+    <Compile Include="Migrations\20201008213505_teste sem chave estrangeira.designer.cs">
+      <DependentUpon>20201008213505_teste sem chave estrangeira.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20201008213653_com chave estrangeira.cs" />
+    <Compile Include="Migrations\20201008213653_com chave estrangeira.designer.cs">
+      <DependentUpon>20201008213653_com chave estrangeira.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\ApplicationDBContextModelSnapshot.cs" />
+    <Compile Include="view\AlterarAgendamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\AlterarAgendamento.Designer.cs">
+      <DependentUpon>AlterarAgendamento.cs</DependentUpon>
+    </Compile>
     <Compile Include="view\CadastroAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -225,6 +239,12 @@
     <Compile Include="view\CancelarAgendamento.Designer.cs">
       <DependentUpon>CancelarAgendamento.cs</DependentUpon>
     </Compile>
+    <Compile Include="view\EscolherDataAlterarAgendamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\EscolherDataAlterarAgendamento.Designer.cs">
+      <DependentUpon>EscolherDataAlterarAgendamento.cs</DependentUpon>
+    </Compile>
     <Compile Include="view\Inicial.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -242,6 +262,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="view\AlterarAgendamento.resx">
+      <DependentUpon>AlterarAgendamento.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="view\CadastrarAgendamento.resx">
       <DependentUpon>CadastrarAgendamento.cs</DependentUpon>
     </EmbeddedResource>
@@ -250,6 +273,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="view\CancelarAgendamento.resx">
       <DependentUpon>CancelarAgendamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\EscolherDataAlterarAgendamento.resx">
+      <DependentUpon>EscolherDataAlterarAgendamento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="view\Inicial.resx">
       <DependentUpon>Inicial.cs</DependentUpon>

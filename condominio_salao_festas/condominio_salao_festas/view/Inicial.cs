@@ -61,5 +61,11 @@ namespace condominio_salao_festas
             frmCancelarAgendamento cancelarAgendamento = new frmCancelarAgendamento();
             cancelarAgendamento.Show();
         }
+
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+            frmAlterarAgendamento alterarAgendamento = new frmAlterarAgendamento();
+            alterarAgendamento.Show();
+        }
     }
 }

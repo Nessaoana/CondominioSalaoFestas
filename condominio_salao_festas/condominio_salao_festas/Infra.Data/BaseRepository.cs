@@ -1,4 +1,5 @@
 ﻿using condominio_salao_festas.Dominio.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
 using System;
 using System.Collections.Generic;

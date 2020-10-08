@@ -34,11 +34,12 @@
             this.btnAgendamentosLista = new System.Windows.Forms.Button();
             this.btnIrParaAgendamento = new System.Windows.Forms.Button();
             this.btnCancelarAgendamento = new System.Windows.Forms.Button();
+            this.btnAlterar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnCriarAdmin
             // 
-            this.btnCriarAdmin.Location = new System.Drawing.Point(289, 277);
+            this.btnCriarAdmin.Location = new System.Drawing.Point(289, 262);
             this.btnCriarAdmin.Name = "btnCriarAdmin";
             this.btnCriarAdmin.Size = new System.Drawing.Size(85, 40);
             this.btnCriarAdmin.TabIndex = 0;
@@ -59,7 +60,7 @@
             // 
             // btnLoginAbrir
             // 
-            this.btnLoginAbrir.Location = new System.Drawing.Point(82, 277);
+            this.btnLoginAbrir.Location = new System.Drawing.Point(82, 262);
             this.btnLoginAbrir.Name = "btnLoginAbrir";
             this.btnLoginAbrir.Size = new System.Drawing.Size(85, 40);
             this.btnLoginAbrir.TabIndex = 2;
@@ -69,7 +70,7 @@
             // 
             // btnAgendamentosLista
             // 
-            this.btnAgendamentosLista.Location = new System.Drawing.Point(491, 277);
+            this.btnAgendamentosLista.Location = new System.Drawing.Point(491, 262);
             this.btnAgendamentosLista.Name = "btnAgendamentosLista";
             this.btnAgendamentosLista.Size = new System.Drawing.Size(85, 40);
             this.btnAgendamentosLista.TabIndex = 3;
@@ -79,7 +80,7 @@
             // 
             // btnIrParaAgendamento
             // 
-            this.btnIrParaAgendamento.Location = new System.Drawing.Point(491, 323);
+            this.btnIrParaAgendamento.Location = new System.Drawing.Point(491, 308);
             this.btnIrParaAgendamento.Name = "btnIrParaAgendamento";
             this.btnIrParaAgendamento.Size = new System.Drawing.Size(85, 40);
             this.btnIrParaAgendamento.TabIndex = 4;
@@ -89,7 +90,7 @@
             // 
             // btnCancelarAgendamento
             // 
-            this.btnCancelarAgendamento.Location = new System.Drawing.Point(491, 369);
+            this.btnCancelarAgendamento.Location = new System.Drawing.Point(491, 354);
             this.btnCancelarAgendamento.Name = "btnCancelarAgendamento";
             this.btnCancelarAgendamento.Size = new System.Drawing.Size(85, 40);
             this.btnCancelarAgendamento.TabIndex = 5;
@@ -97,11 +98,22 @@
             this.btnCancelarAgendamento.UseVisualStyleBackColor = true;
             this.btnCancelarAgendamento.Click += new System.EventHandler(this.btnCancelarAgendamento_Click);
             // 
+            // btnAlterar
+            // 
+            this.btnAlterar.Location = new System.Drawing.Point(491, 400);
+            this.btnAlterar.Name = "btnAlterar";
+            this.btnAlterar.Size = new System.Drawing.Size(85, 40);
+            this.btnAlterar.TabIndex = 6;
+            this.btnAlterar.Text = "Alterar";
+            this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(646, 450);
+            this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.btnCancelarAgendamento);
             this.Controls.Add(this.btnIrParaAgendamento);
             this.Controls.Add(this.btnAgendamentosLista);
@@ -124,6 +136,7 @@
         private System.Windows.Forms.Button btnAgendamentosLista;
         private System.Windows.Forms.Button btnIrParaAgendamento;
         private System.Windows.Forms.Button btnCancelarAgendamento;
+        private System.Windows.Forms.Button btnAlterar;
     }
 }
 
