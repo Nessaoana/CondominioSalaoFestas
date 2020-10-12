@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.txtSenhaValor = new System.Windows.Forms.TextBox();
-            this.txtEmailValor = new System.Windows.Forms.TextBox();
+            this.txtApartamentoValor = new System.Windows.Forms.TextBox();
             this.txtNomeValor = new System.Windows.Forms.TextBox();
             this.cadastrar = new System.Windows.Forms.Button();
             this.senha = new System.Windows.Forms.Label();
@@ -48,16 +48,15 @@
             this.txtSenhaValor.Name = "txtSenhaValor";
             this.txtSenhaValor.Size = new System.Drawing.Size(161, 20);
             this.txtSenhaValor.TabIndex = 13;
-            this.txtSenhaValor.Visible = false;
             this.txtSenhaValor.TextChanged += new System.EventHandler(this.txtSenhaValor_TextChanged);
             // 
-            // txtEmailValor
+            // txtApartamentoValor
             // 
-            this.txtEmailValor.Location = new System.Drawing.Point(419, 140);
-            this.txtEmailValor.Name = "txtEmailValor";
-            this.txtEmailValor.Size = new System.Drawing.Size(161, 20);
-            this.txtEmailValor.TabIndex = 12;
-            this.txtEmailValor.TextChanged += new System.EventHandler(this.txtEmailValor_TextChanged);
+            this.txtApartamentoValor.Location = new System.Drawing.Point(419, 140);
+            this.txtApartamentoValor.Name = "txtApartamentoValor";
+            this.txtApartamentoValor.Size = new System.Drawing.Size(161, 20);
+            this.txtApartamentoValor.TabIndex = 12;
+            this.txtApartamentoValor.TextChanged += new System.EventHandler(this.txtEmailValor_TextChanged);
             // 
             // txtNomeValor
             // 
@@ -164,13 +163,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(682, 450);
+            this.Controls.Add(this.txtSenhaValor);
             this.Controls.Add(this.btnInicialAdmin);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnListaMoradoresMenu);
             this.Controls.Add(this.btnCadastrarMoradorMenu);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtSenhaValor);
-            this.Controls.Add(this.txtEmailValor);
+            this.Controls.Add(this.txtApartamentoValor);
             this.Controls.Add(this.txtNomeValor);
             this.Controls.Add(this.cadastrar);
             this.Controls.Add(this.senha);
@@ -178,6 +177,7 @@
             this.Controls.Add(this.nome);
             this.Name = "CadastroMorador";
             this.Text = "CadastroMorador";
+            this.Load += new System.EventHandler(this.CadastroMorador_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -186,7 +186,7 @@
         #endregion
 
         private System.Windows.Forms.TextBox txtSenhaValor;
-        private System.Windows.Forms.TextBox txtEmailValor;
+        private System.Windows.Forms.TextBox txtApartamentoValor;
         private System.Windows.Forms.TextBox txtNomeValor;
         private System.Windows.Forms.Button cadastrar;
         private System.Windows.Forms.Label senha;

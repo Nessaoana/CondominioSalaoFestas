@@ -10,6 +10,11 @@ namespace condominio_salao_festas.Dominio.Entidades
     public class Apartamento : EntidadeBase
 
     {
+        public Apartamento(string NumeroApartamento)
+        {
+            this.NumeroApartamento = NumeroApartamento;
+        }
+
         public string NumeroApartamento { get; set; }
     }
 }
