@@ -34,6 +34,7 @@
             this.btnAgendamentosLista = new System.Windows.Forms.Button();
             this.btnIrParaAgendamento = new System.Windows.Forms.Button();
             this.btnCancelarAgendamento = new System.Windows.Forms.Button();
+            this.cadastrarMorador = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnCriarAdmin
@@ -97,11 +98,22 @@
             this.btnCancelarAgendamento.UseVisualStyleBackColor = true;
             this.btnCancelarAgendamento.Click += new System.EventHandler(this.btnCancelarAgendamento_Click);
             // 
+            // cadastrarMorador
+            // 
+            this.cadastrarMorador.Location = new System.Drawing.Point(289, 323);
+            this.cadastrarMorador.Name = "cadastrarMorador";
+            this.cadastrarMorador.Size = new System.Drawing.Size(85, 40);
+            this.cadastrarMorador.TabIndex = 6;
+            this.cadastrarMorador.Text = "Criar morador";
+            this.cadastrarMorador.UseVisualStyleBackColor = true;
+            this.cadastrarMorador.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(646, 450);
+            this.Controls.Add(this.cadastrarMorador);
             this.Controls.Add(this.btnCancelarAgendamento);
             this.Controls.Add(this.btnIrParaAgendamento);
             this.Controls.Add(this.btnAgendamentosLista);
@@ -124,6 +136,7 @@
         private System.Windows.Forms.Button btnAgendamentosLista;
         private System.Windows.Forms.Button btnIrParaAgendamento;
         private System.Windows.Forms.Button btnCancelarAgendamento;
+        private System.Windows.Forms.Button cadastrarMorador;
     }
 }
 

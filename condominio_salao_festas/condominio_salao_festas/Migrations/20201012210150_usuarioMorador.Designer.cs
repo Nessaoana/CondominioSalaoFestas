@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using condominio_salao_festas.model.db_context;
 
 namespace condominio_salao_festas.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    partial class ApplicationDBContextModelSnapshot : ModelSnapshot
+    [Migration("20201012210150_usuarioMorador")]
+    partial class usuarioMorador
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -61,8 +63,8 @@ namespace condominio_salao_festas.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("Apartamento")
-                        .HasColumnType("int");
+                    b.Property<string>("Apartamento")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Nome")
                         .HasColumnType("nvarchar(max)");
@@ -71,8 +73,6 @@ namespace condominio_salao_festas.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("Apartamento");
 
                     b.ToTable("Usuarios");
                 });
@@ -99,13 +99,6 @@ namespace condominio_salao_festas.Migrations
                 });
 
             modelBuilder.Entity("condominio_salao_festas.Dominio.Entidades.Agendamento", b =>
-                {
-                    b.HasOne("condominio_salao_festas.Dominio.Entidades.Apartamento", "ApartamentoRef")
-                        .WithMany()
-                        .HasForeignKey("Apartamento");
-                });
-
-            modelBuilder.Entity("condominio_salao_festas.model.Usuario", b =>
                 {
                     b.HasOne("condominio_salao_festas.Dominio.Entidades.Apartamento", "ApartamentoRef")
                         .WithMany()

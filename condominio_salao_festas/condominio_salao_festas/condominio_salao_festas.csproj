@@ -179,37 +179,13 @@
     <Compile Include="Dominio\Entidades\EntidadeBase.cs" />
     <Compile Include="Dominio\Entidades\Usuario.cs" />
     <Compile Include="Dominio\Entidades\UsuarioAdmin.cs" />
-    <Compile Include="Migrations\20201005232702_inicial.cs" />
-    <Compile Include="Migrations\20201005232702_inicial.designer.cs">
-      <DependentUpon>20201005232702_inicial.cs</DependentUpon>
+    <Compile Include="Migrations\20201012210150_usuarioMorador.cs" />
+    <Compile Include="Migrations\20201012210150_usuarioMorador.designer.cs">
+      <DependentUpon>20201012210150_usuarioMorador.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\20201005232828_tste.cs" />
-    <Compile Include="Migrations\20201005232828_tste.designer.cs">
-      <DependentUpon>20201005232828_tste.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\20201005232955_MigracaoInicial.cs" />
-    <Compile Include="Migrations\20201005232955_MigracaoInicial.designer.cs">
-      <DependentUpon>20201005232955_MigracaoInicial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\20201006024156_criando agendamento.cs" />
-    <Compile Include="Migrations\20201006024156_criando agendamento.designer.cs">
-      <DependentUpon>20201006024156_criando agendamento.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\20201006025130_ajuste do tipo da variavel.cs" />
-    <Compile Include="Migrations\20201006025130_ajuste do tipo da variavel.designer.cs">
-      <DependentUpon>20201006025130_ajuste do tipo da variavel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\20201006030141_criado entidade apartamento.cs" />
-    <Compile Include="Migrations\20201006030141_criado entidade apartamento.designer.cs">
-      <DependentUpon>20201006030141_criado entidade apartamento.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\20201006030223_criado entidade apartamento e arrumado.cs" />
-    <Compile Include="Migrations\20201006030223_criado entidade apartamento e arrumado.designer.cs">
-      <DependentUpon>20201006030223_criado entidade apartamento e arrumado.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\20201012190553_Relacionamento apartamento x agendamento.cs" />
-    <Compile Include="Migrations\20201012190553_Relacionamento apartamento x agendamento.designer.cs">
-      <DependentUpon>20201012190553_Relacionamento apartamento x agendamento.cs</DependentUpon>
+    <Compile Include="Migrations\20201012210437_usuarioMorador_FKapartamento.cs" />
+    <Compile Include="Migrations\20201012210437_usuarioMorador_FKapartamento.designer.cs">
+      <DependentUpon>20201012210437_usuarioMorador_FKapartamento.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\ApplicationDBContextModelSnapshot.cs" />
     <Compile Include="view\CadastroAdmin.cs">
@@ -217,6 +193,12 @@
     </Compile>
     <Compile Include="view\CadastroAdmin.Designer.cs">
       <DependentUpon>CadastroAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\CadastroMorador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\CadastroMorador.Designer.cs">
+      <DependentUpon>CadastroMorador.cs</DependentUpon>
     </Compile>
     <Compile Include="view\CadastrarAgendamento.cs">
       <SubType>Form</SubType>
@@ -252,6 +234,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="view\CadastroAdmin.resx">
       <DependentUpon>CadastroAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\CadastroMorador.resx">
+      <DependentUpon>CadastroMorador.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="view\CancelarAgendamento.resx">
       <DependentUpon>CancelarAgendamento.cs</DependentUpon>
