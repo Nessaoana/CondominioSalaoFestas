@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using condominio_salao_festas.model.db_context;
 
 namespace condominio_salao_festas.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    partial class ApplicationDBContextModelSnapshot : ModelSnapshot
+    [Migration("20201006024156_criando agendamento")]
+    partial class criandoagendamento
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -26,32 +28,15 @@ namespace condominio_salao_festas.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("Apartamento")
-                        .HasColumnType("int");
-
-                    b.Property<string>("DataAgendamento")
+                    b.Property<string>("ApartamentoRef")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Id");
+                    b.Property<DateTime>("DataAgendamento")
+                        .HasColumnType("datetime2");
 
-                    b.HasIndex("Apartamento");
+                    b.HasKey("Id");
 
                     b.ToTable("Agendamentos");
-                });
-
-            modelBuilder.Entity("condominio_salao_festas.Dominio.Entidades.Apartamento", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("NumeroApartamento")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Apartamentos");
                 });
 
             modelBuilder.Entity("condominio_salao_festas.model.Usuario", b =>
@@ -94,13 +79,6 @@ namespace condominio_salao_festas.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("UsuariosAdmin");
-                });
-
-            modelBuilder.Entity("condominio_salao_festas.Dominio.Entidades.Agendamento", b =>
-                {
-                    b.HasOne("condominio_salao_festas.Dominio.Entidades.Apartamento", "ApartamentoRef")
-                        .WithMany()
-                        .HasForeignKey("Apartamento");
                 });
 #pragma warning restore 612, 618
         }

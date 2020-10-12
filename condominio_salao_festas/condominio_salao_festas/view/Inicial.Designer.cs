@@ -32,6 +32,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnLoginAbrir = new System.Windows.Forms.Button();
             this.btnAgendamentosLista = new System.Windows.Forms.Button();
+            this.btnIrParaAgendamento = new System.Windows.Forms.Button();
+            this.btnCancelarAgendamento = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnCriarAdmin
@@ -75,11 +77,33 @@
             this.btnAgendamentosLista.UseVisualStyleBackColor = true;
             this.btnAgendamentosLista.Click += new System.EventHandler(this.button3_Click);
             // 
+            // btnIrParaAgendamento
+            // 
+            this.btnIrParaAgendamento.Location = new System.Drawing.Point(491, 323);
+            this.btnIrParaAgendamento.Name = "btnIrParaAgendamento";
+            this.btnIrParaAgendamento.Size = new System.Drawing.Size(85, 40);
+            this.btnIrParaAgendamento.TabIndex = 4;
+            this.btnIrParaAgendamento.Text = "Agendar";
+            this.btnIrParaAgendamento.UseVisualStyleBackColor = true;
+            this.btnIrParaAgendamento.Click += new System.EventHandler(this.btnIrParaAgendamento_Click);
+            // 
+            // btnCancelarAgendamento
+            // 
+            this.btnCancelarAgendamento.Location = new System.Drawing.Point(491, 369);
+            this.btnCancelarAgendamento.Name = "btnCancelarAgendamento";
+            this.btnCancelarAgendamento.Size = new System.Drawing.Size(85, 40);
+            this.btnCancelarAgendamento.TabIndex = 5;
+            this.btnCancelarAgendamento.Text = "Cancelar";
+            this.btnCancelarAgendamento.UseVisualStyleBackColor = true;
+            this.btnCancelarAgendamento.Click += new System.EventHandler(this.btnCancelarAgendamento_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(646, 450);
+            this.Controls.Add(this.btnCancelarAgendamento);
+            this.Controls.Add(this.btnIrParaAgendamento);
             this.Controls.Add(this.btnAgendamentosLista);
             this.Controls.Add(this.btnLoginAbrir);
             this.Controls.Add(this.label1);
@@ -98,6 +122,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnLoginAbrir;
         private System.Windows.Forms.Button btnAgendamentosLista;
+        private System.Windows.Forms.Button btnIrParaAgendamento;
+        private System.Windows.Forms.Button btnCancelarAgendamento;
     }
 }
 

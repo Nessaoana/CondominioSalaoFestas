@@ -170,7 +170,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dominio\Entidades\Agendamento.cs" />
+    <Compile Include="Dominio\Entidades\Apartamento.cs" />
     <Compile Include="Dominio\Interfaces\IRepository.cs" />
+    <Compile Include="Infra.Data\ApartamentoRepository.cs" />
     <Compile Include="Infra.Data\ApplicationDBContext.cs" />
     <Compile Include="Infra.Data\BaseRepository.cs" />
     <Compile Include="Dominio\Entidades\EntidadeBase.cs" />
@@ -188,6 +191,26 @@
     <Compile Include="Migrations\20201005232955_MigracaoInicial.designer.cs">
       <DependentUpon>20201005232955_MigracaoInicial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20201006024156_criando agendamento.cs" />
+    <Compile Include="Migrations\20201006024156_criando agendamento.designer.cs">
+      <DependentUpon>20201006024156_criando agendamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20201006025130_ajuste do tipo da variavel.cs" />
+    <Compile Include="Migrations\20201006025130_ajuste do tipo da variavel.designer.cs">
+      <DependentUpon>20201006025130_ajuste do tipo da variavel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20201006030141_criado entidade apartamento.cs" />
+    <Compile Include="Migrations\20201006030141_criado entidade apartamento.designer.cs">
+      <DependentUpon>20201006030141_criado entidade apartamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20201006030223_criado entidade apartamento e arrumado.cs" />
+    <Compile Include="Migrations\20201006030223_criado entidade apartamento e arrumado.designer.cs">
+      <DependentUpon>20201006030223_criado entidade apartamento e arrumado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20201012190553_Relacionamento apartamento x agendamento.cs" />
+    <Compile Include="Migrations\20201012190553_Relacionamento apartamento x agendamento.designer.cs">
+      <DependentUpon>20201012190553_Relacionamento apartamento x agendamento.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\ApplicationDBContextModelSnapshot.cs" />
     <Compile Include="view\CadastroAdmin.cs">
       <SubType>Form</SubType>
@@ -200,6 +223,18 @@
     </Compile>
     <Compile Include="view\CadastroMorador.Designer.cs">
       <DependentUpon>CadastroMorador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\CadastrarAgendamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\CadastrarAgendamento.Designer.cs">
+      <DependentUpon>CadastrarAgendamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\CancelarAgendamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\CancelarAgendamento.Designer.cs">
+      <DependentUpon>CancelarAgendamento.cs</DependentUpon>
     </Compile>
     <Compile Include="view\Inicial.cs">
       <SubType>Form</SubType>
@@ -218,11 +253,18 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="view\CadastrarAgendamento.resx">
+      <DependentUpon>CadastrarAgendamento.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="view\CadastroAdmin.resx">
       <DependentUpon>CadastroAdmin.cs</DependentUpon>
     </EmbeddedResource>
+
     <EmbeddedResource Include="view\CadastroMorador.resx">
       <DependentUpon>CadastroMorador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\CancelarAgendamento.resx">
+      <DependentUpon>CancelarAgendamento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="view\Inicial.resx">
       <DependentUpon>Inicial.cs</DependentUpon>
