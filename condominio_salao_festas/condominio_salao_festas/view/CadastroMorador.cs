@@ -56,5 +56,11 @@ namespace condominio_salao_festas.view
         {
 
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }
