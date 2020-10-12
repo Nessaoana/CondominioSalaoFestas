@@ -61,5 +61,11 @@ namespace condominio_salao_festas
             frmCancelarAgendamento cancelarAgendamento = new frmCancelarAgendamento();
             cancelarAgendamento.Show();
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            CadastroMorador cadastroMorador = new CadastroMorador();
+            cadastroMorador.Show();
+        }
     }
 }
