@@ -173,6 +173,7 @@
     <Compile Include="Dominio\Entidades\Agendamento.cs" />
     <Compile Include="Dominio\Entidades\Apartamento.cs" />
     <Compile Include="Dominio\Interfaces\IRepository.cs" />
+    <Compile Include="Infra.Data\ApartamentoRepository.cs" />
     <Compile Include="Infra.Data\ApplicationDBContext.cs" />
     <Compile Include="Infra.Data\BaseRepository.cs" />
     <Compile Include="Dominio\Entidades\EntidadeBase.cs" />
@@ -205,6 +206,10 @@
     <Compile Include="Migrations\20201006030223_criado entidade apartamento e arrumado.cs" />
     <Compile Include="Migrations\20201006030223_criado entidade apartamento e arrumado.designer.cs">
       <DependentUpon>20201006030223_criado entidade apartamento e arrumado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20201012190553_Relacionamento apartamento x agendamento.cs" />
+    <Compile Include="Migrations\20201012190553_Relacionamento apartamento x agendamento.designer.cs">
+      <DependentUpon>20201012190553_Relacionamento apartamento x agendamento.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\ApplicationDBContextModelSnapshot.cs" />
     <Compile Include="view\CadastroAdmin.cs">

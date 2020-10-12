@@ -1,4 +1,5 @@
 ﻿using condominio_salao_festas.Dominio.Entidades;
+using condominio_salao_festas.Infra.Data;
 using condominio_salao_festas.model.db_context;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,8 @@ namespace condominio_salao_festas.view
     public partial class frmCadastrarAgendamento : Form
     {
         private BaseRepository<Agendamento> repositorio = new BaseRepository<Agendamento>();
+        private ApartamentoRepository repositorioAp = new ApartamentoRepository();
+
         public frmCadastrarAgendamento()
         {
             InitializeComponent();
@@ -79,7 +82,7 @@ namespace condominio_salao_festas.view
                 {
                     Agendamento agendamento = new Agendamento();
                     agendamento.DataAgendamento = this.dtDataReserva.SelectionStart.ToShortDateString();
-                    agendamento.ApartamentoRef = this.txtApartamento.Text;
+                    agendamento.ApartamentoRef = repositorioAp.SelectNumeroAp(this.txtApartamento.Text);                        
                     repositorio.Insert(agendamento);
                     MessageBox.Show("Dia "
                     + this.dtDataReserva.SelectionStart.ToShortDateString()

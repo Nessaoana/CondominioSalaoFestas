@@ -13,6 +13,6 @@ namespace condominio_salao_festas.Dominio.Entidades
     {
         public string DataAgendamento { get; set; }
         [ForeignKey("Apartamento")]
-        public string ApartamentoRef { get; set; }
+        public Apartamento ApartamentoRef { get; set; }
     }
 }
