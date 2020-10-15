@@ -30,12 +30,10 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.btnLoginAbrir = new System.Windows.Forms.Button();
-            this.btnAgendamentosLista = new System.Windows.Forms.Button();
-            this.btnIrParaAgendamento = new System.Windows.Forms.Button();
-            this.btnCancelarAgendamento = new System.Windows.Forms.Button();
             this.cadastrarMorador = new System.Windows.Forms.Button();
             this.btnGerenciar = new System.Windows.Forms.Button();
             this.btnApartamentos = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -61,42 +59,6 @@
             this.btnLoginAbrir.Text = "Login";
             this.btnLoginAbrir.UseVisualStyleBackColor = true;
             this.btnLoginAbrir.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // btnAgendamentosLista
-            // 
-            this.btnAgendamentosLista.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgendamentosLista.Location = new System.Drawing.Point(655, 341);
-            this.btnAgendamentosLista.Margin = new System.Windows.Forms.Padding(4);
-            this.btnAgendamentosLista.Name = "btnAgendamentosLista";
-            this.btnAgendamentosLista.Size = new System.Drawing.Size(113, 49);
-            this.btnAgendamentosLista.TabIndex = 3;
-            this.btnAgendamentosLista.Text = "Acessar agendamentos";
-            this.btnAgendamentosLista.UseVisualStyleBackColor = true;
-            this.btnAgendamentosLista.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // btnIrParaAgendamento
-            // 
-            this.btnIrParaAgendamento.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIrParaAgendamento.Location = new System.Drawing.Point(655, 398);
-            this.btnIrParaAgendamento.Margin = new System.Windows.Forms.Padding(4);
-            this.btnIrParaAgendamento.Name = "btnIrParaAgendamento";
-            this.btnIrParaAgendamento.Size = new System.Drawing.Size(113, 49);
-            this.btnIrParaAgendamento.TabIndex = 4;
-            this.btnIrParaAgendamento.Text = "Agendar";
-            this.btnIrParaAgendamento.UseVisualStyleBackColor = true;
-            this.btnIrParaAgendamento.Click += new System.EventHandler(this.btnIrParaAgendamento_Click);
-            // 
-            // btnCancelarAgendamento
-            // 
-            this.btnCancelarAgendamento.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelarAgendamento.Location = new System.Drawing.Point(655, 454);
-            this.btnCancelarAgendamento.Margin = new System.Windows.Forms.Padding(4);
-            this.btnCancelarAgendamento.Name = "btnCancelarAgendamento";
-            this.btnCancelarAgendamento.Size = new System.Drawing.Size(113, 49);
-            this.btnCancelarAgendamento.TabIndex = 5;
-            this.btnCancelarAgendamento.Text = "Cancelar";
-            this.btnCancelarAgendamento.UseVisualStyleBackColor = true;
-            this.btnCancelarAgendamento.Click += new System.EventHandler(this.btnCancelarAgendamento_Click);
             // 
             // cadastrarMorador
             // 
@@ -133,17 +95,27 @@
             this.btnApartamentos.UseVisualStyleBackColor = true;
             this.btnApartamentos.Click += new System.EventHandler(this.btnApartamentos_Click);
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(307, 323);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(191, 124);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "Gerenciar Agendamentos";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_2);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(861, 554);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnApartamentos);
             this.Controls.Add(this.btnGerenciar);
             this.Controls.Add(this.cadastrarMorador);
-            this.Controls.Add(this.btnCancelarAgendamento);
-            this.Controls.Add(this.btnIrParaAgendamento);
-            this.Controls.Add(this.btnAgendamentosLista);
             this.Controls.Add(this.btnLoginAbrir);
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -159,12 +131,10 @@
         #endregion
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnLoginAbrir;
-        private System.Windows.Forms.Button btnAgendamentosLista;
-        private System.Windows.Forms.Button btnIrParaAgendamento;
-        private System.Windows.Forms.Button btnCancelarAgendamento;
         private System.Windows.Forms.Button cadastrarMorador;
         private System.Windows.Forms.Button btnGerenciar;
         private System.Windows.Forms.Button btnApartamentos;
+        private System.Windows.Forms.Button button1;
     }
 }
 

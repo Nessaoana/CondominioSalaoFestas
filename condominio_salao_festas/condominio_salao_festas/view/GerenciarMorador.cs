@@ -43,6 +43,7 @@ namespace condominio_salao_festas.view
 
             dgvMoradores.DataSource = null;
             dgvMoradores.DataSource = moradores;
+            dgvMoradores.Columns[0].Visible = false;
             dgvMoradores.Refresh();
             dgvMoradores.Update();
         }

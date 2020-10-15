@@ -30,26 +30,21 @@ namespace condominio_salao_festas.view
 
         private void atualizarTabela()
         {
-            DataTable tabela = new DataTable();
 
-            tabela.Columns.Add("Código", typeof(string));
-            tabela.Columns.Add("Data", typeof(string));
+            repositorio = new BaseRepository<Agendamento>();
+            List<Agendamento> agendamentos = repositorio.SelectAll().ToList();
 
-            DataRow Linha;
-            foreach (var agendamento in repositorio.SelectAll())
-            {
-                Linha = tabela.NewRow();
-                Linha[0] = agendamento.Id;
-                Linha[1] = agendamento.DataAgendamento;
-                tabela.Rows.Add(Linha);
-            }
-            dtGridCancelarAgendamento.DataSource = tabela;
+            dtGridCancelarAgendamento.DataSource = null;
+            dtGridCancelarAgendamento.DataSource = agendamentos;
+            dtGridCancelarAgendamento.Refresh();
+            dtGridCancelarAgendamento.Update();
+            dtGridCancelarAgendamento.Columns[1].Visible = false;
         }
 
         private void btnCancelarAgendamento_Click(object sender, EventArgs e)
         {
             DialogResult resultado = MessageBox.Show("Deseja cancelar o dia "
-                + dtGridCancelarAgendamento.CurrentRow.Cells[1].Value.ToString()
+                + dtGridCancelarAgendamento.CurrentRow.Cells[0].Value.ToString()
                 + "?",
                 "Confirmação de Cancelamento",
                 MessageBoxButtons.YesNo,
@@ -57,16 +52,23 @@ namespace condominio_salao_festas.view
                 if (resultado == DialogResult.Yes)
                 {
                     Agendamento agendamento = new Agendamento();
-                    agendamento.Id = int.Parse(dtGridCancelarAgendamento.CurrentRow.Cells[0].Value.ToString());
+                    agendamento.Id = int.Parse(dtGridCancelarAgendamento.CurrentRow.Cells[3].Value.ToString());
                     repositorio.Remove(agendamento.Id);
                     MessageBox.Show("Dia "
-                    + dtGridCancelarAgendamento.CurrentRow.Cells[1].Value.ToString()
+                    + dtGridCancelarAgendamento.CurrentRow.Cells[0].Value.ToString()
                     + " foi cancelado com sucesso!",
                     "Sucesso ao cancelar",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Asterisk);
-                    Close();
+                    atualizarTabela();
                 }
+        }
+
+        private void btnIrParaAgendamento_Click(object sender, EventArgs e)
+        {
+            frmCadastrarAgendamento cadastrarAgendamento = new frmCadastrarAgendamento();
+            cadastrarAgendamento.ShowDialog();
+            atualizarTabela();
         }
     }
 }

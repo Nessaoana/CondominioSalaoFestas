@@ -204,6 +204,10 @@
     <Compile Include="Migrations\20201015220925_Tirando lista usuario.designer.cs">
       <DependentUpon>20201015220925_Tirando lista usuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20201015231754_idapartamento.cs" />
+    <Compile Include="Migrations\20201015231754_idapartamento.designer.cs">
+      <DependentUpon>20201015231754_idapartamento.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\ApplicationDBContextModelSnapshot.cs" />
     <Compile Include="view\CadastroAdmin.cs">
       <SubType>Form</SubType>

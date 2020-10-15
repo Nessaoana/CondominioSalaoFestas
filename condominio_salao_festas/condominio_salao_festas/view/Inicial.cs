@@ -81,5 +81,11 @@ namespace condominio_salao_festas
             GerenciarApartamento gerenciarApartamento = new GerenciarApartamento();
             gerenciarApartamento.Show();
         }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            frmCancelarAgendamento cancelarAgendamento = new frmCancelarAgendamento();
+            cancelarAgendamento.Show();
+        }
     }
 }
