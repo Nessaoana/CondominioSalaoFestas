@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using condominio_salao_festas.model.db_context;
 
 namespace condominio_salao_festas.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    partial class ApplicationDBContextModelSnapshot : ModelSnapshot
+    [Migration("20201015214113_apartamentID")]
+    partial class apartamentID
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -108,7 +110,7 @@ namespace condominio_salao_festas.Migrations
             modelBuilder.Entity("condominio_salao_festas.model.Usuario", b =>
                 {
                     b.HasOne("condominio_salao_festas.Dominio.Entidades.Apartamento", "ApartamentoRef")
-                        .WithMany()
+                        .WithMany("Usuarios")
                         .HasForeignKey("ApartamentoId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();

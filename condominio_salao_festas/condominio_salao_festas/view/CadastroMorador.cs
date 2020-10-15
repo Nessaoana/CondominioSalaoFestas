@@ -19,6 +19,7 @@ namespace condominio_salao_festas.view
     {
         private BaseRepository<Usuario> repositorio = new BaseRepository<Usuario>();
         private BaseRepository<Apartamento> repositorioApartamento = new BaseRepository<Apartamento>();
+        private ApartamentoRepository repositorioApUnico = new ApartamentoRepository();
 
         EscolhaForm escolhaSelecao;
 
@@ -78,9 +79,10 @@ namespace condominio_salao_festas.view
                 string mensagem = null;
                 morador.Nome = txtNomeValor.Text;
                 morador.Senha = txtSenhaValor.Text;
+
                 Apartamento apartamento = this.cbApartamento.SelectedItem as Apartamento;
-                morador.ApartamentoRef = new Apartamento("");
-                morador.ApartamentoRef = apartamento;
+                morador.ApartamentoId = apartamento.Id;
+
                 if (escolhaSelecao.Equals(EscolhaForm.Alterar))
                 {
                     morador.Id = Convert.ToInt32(txtId.Text);
@@ -98,8 +100,9 @@ namespace condominio_salao_festas.view
                 MessageBox.Show(mensagem);
                 this.Close();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                Console.Write(ex);
                 MessageBox.Show("Preencha os campos corretamete", " Falta de dados ", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 

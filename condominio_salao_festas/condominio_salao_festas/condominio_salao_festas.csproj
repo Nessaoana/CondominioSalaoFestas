@@ -188,6 +188,22 @@
     <Compile Include="Migrations\20201012210437_usuarioMorador_FKapartamento.designer.cs">
       <DependentUpon>20201012210437_usuarioMorador_FKapartamento.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20201015213321_listaUsuarios.cs" />
+    <Compile Include="Migrations\20201015213321_listaUsuarios.designer.cs">
+      <DependentUpon>20201015213321_listaUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20201015214113_apartamentID.cs" />
+    <Compile Include="Migrations\20201015214113_apartamentID.designer.cs">
+      <DependentUpon>20201015214113_apartamentID.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20201015214204_apartamento.cs" />
+    <Compile Include="Migrations\20201015214204_apartamento.designer.cs">
+      <DependentUpon>20201015214204_apartamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20201015220925_Tirando lista usuario.cs" />
+    <Compile Include="Migrations\20201015220925_Tirando lista usuario.designer.cs">
+      <DependentUpon>20201015220925_Tirando lista usuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\ApplicationDBContextModelSnapshot.cs" />
     <Compile Include="view\CadastroAdmin.cs">
       <SubType>Form</SubType>

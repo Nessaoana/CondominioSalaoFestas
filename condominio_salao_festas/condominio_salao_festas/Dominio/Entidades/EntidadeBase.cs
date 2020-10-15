@@ -10,8 +10,6 @@ namespace condominio_salao_festas.model
 {
     public abstract class EntidadeBase
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public virtual int Id { get; set; }
     }
 }

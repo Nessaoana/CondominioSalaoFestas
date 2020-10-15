@@ -16,5 +16,8 @@ namespace condominio_salao_festas.Dominio.Entidades
         }
 
         public string NumeroApartamento { get; set; }
+
+       
+
     }
 }

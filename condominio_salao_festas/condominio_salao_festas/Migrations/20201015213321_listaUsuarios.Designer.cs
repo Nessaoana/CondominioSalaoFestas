@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using condominio_salao_festas.model.db_context;
 
 namespace condominio_salao_festas.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    partial class ApplicationDBContextModelSnapshot : ModelSnapshot
+    [Migration("20201015213321_listaUsuarios")]
+    partial class listaUsuarios
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -61,7 +63,7 @@ namespace condominio_salao_festas.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("ApartamentoId")
+                    b.Property<int?>("Apartamento")
                         .HasColumnType("int");
 
                     b.Property<string>("Nome")
@@ -72,7 +74,7 @@ namespace condominio_salao_festas.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ApartamentoId");
+                    b.HasIndex("Apartamento");
 
                     b.ToTable("Usuarios");
                 });
@@ -108,10 +110,8 @@ namespace condominio_salao_festas.Migrations
             modelBuilder.Entity("condominio_salao_festas.model.Usuario", b =>
                 {
                     b.HasOne("condominio_salao_festas.Dominio.Entidades.Apartamento", "ApartamentoRef")
-                        .WithMany()
-                        .HasForeignKey("ApartamentoId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .WithMany("Usuarios")
+                        .HasForeignKey("Apartamento");
                 });
 #pragma warning restore 612, 618
         }
