@@ -1,5 +1,6 @@
 ﻿using condominio_salao_festas.Dominio.Entidades;
 using condominio_salao_festas.Infra.Data;
+using condominio_salao_festas.model;
 using condominio_salao_festas.model.db_context;
 using System;
 using System.Collections.Generic;
@@ -16,11 +17,21 @@ namespace condominio_salao_festas.view
     public partial class frmCadastrarAgendamento : Form
     {
         private BaseRepository<Agendamento> repositorio = new BaseRepository<Agendamento>();
-        private ApartamentoRepository repositorioAp = new ApartamentoRepository();
+        private BaseRepository<Usuario> repositorioMorador = new BaseRepository<Usuario>();
+
 
         public frmCadastrarAgendamento()
         {
             InitializeComponent();
+            getApartamentos();
+        }
+        public void getApartamentos()
+        {
+            List<Usuario> moradores = repositorioMorador.SelectAll().ToList();
+            cbMoradores.Items.Clear();
+
+            cbMoradores.DataSource = moradores;
+            cbMoradores.ValueMember = "Nome";
         }
 
         private void frmCadastrarAgendamento_Load(object sender, EventArgs e)
@@ -42,9 +53,6 @@ namespace condominio_salao_festas.view
             /*Color cor = new Color();
             cor = Color.FromArgb(127, 123, 147);
             this.dtDataReserva.ForeColor = cor;*/
-
-            this.txtNomeCompleto.Text = "Rafael Peinado da Silva";
-            this.txtApartamento.Text = "3";
         }
 
         private void atualizarCalendario()
@@ -82,7 +90,7 @@ namespace condominio_salao_festas.view
                 {
                     Agendamento agendamento = new Agendamento();
                     agendamento.DataAgendamento = this.dtDataReserva.SelectionStart.ToShortDateString();
-                    agendamento.ApartamentoRef = repositorioAp.SelectNumeroAp(this.txtApartamento.Text);                        
+                    agendamento.ApartamentoId = Convert.ToInt32(this.txtApartamento.Text);                        
                     repositorio.Insert(agendamento);
                     MessageBox.Show("Dia "
                     + this.dtDataReserva.SelectionStart.ToShortDateString()
@@ -115,6 +123,17 @@ namespace condominio_salao_festas.view
             {
                 lblDetalhes.Text = "Obs: data indisponível";
             }
+        }
+
+        private void cbMoradores_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Usuario morador = cbMoradores.SelectedItem as Usuario;
+            txtApartamento.Text = Convert.ToString(morador.ApartamentoId);
+        }
+
+        private void txtApartamento_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

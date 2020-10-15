@@ -12,7 +12,8 @@ namespace condominio_salao_festas.Dominio.Entidades
     public class Agendamento : EntidadeBase
     {
         public string DataAgendamento { get; set; }
-        [ForeignKey("Apartamento")]
+       // [ForeignKey("Apartamento")]
         public Apartamento ApartamentoRef { get; set; }
+        public int ApartamentoId { get; set; }
     }
 }
