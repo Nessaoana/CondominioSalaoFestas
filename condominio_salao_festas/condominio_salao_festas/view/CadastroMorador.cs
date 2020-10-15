@@ -1,4 +1,5 @@
 ﻿using condominio_salao_festas.Dominio.Entidades;
+using condominio_salao_festas.Dominio.Enums;
 using condominio_salao_festas.Infra.Data;
 using condominio_salao_festas.model;
 using condominio_salao_festas.model.db_context;
@@ -17,11 +18,40 @@ namespace condominio_salao_festas.view
     public partial class CadastroMorador : Form
     {
         private BaseRepository<Usuario> repositorio = new BaseRepository<Usuario>();
-        private ApartamentoRepository repositorioAp = new ApartamentoRepository();
+        private BaseRepository<Apartamento> repositorioApartamento = new BaseRepository<Apartamento>();
 
-        public CadastroMorador()
+        EscolhaForm escolhaSelecao;
+
+        public CadastroMorador(EscolhaForm escolha, Usuario usuario)
         {
             InitializeComponent();
+            escolhaSelecao = escolha;
+            if (escolha.Equals(EscolhaForm.Alterar))
+            {
+                carregarCampos(usuario);
+                cadastrar.Text = "Atualizar";
+            }
+            else
+            {
+                cadastrar.Text = "Cadastrar";
+            }
+            getApartamentos();
+        }
+
+        public void getApartamentos()
+        {
+            List<Apartamento> apartamentos = repositorioApartamento.SelectAll().ToList();
+            cbApartamento.Items.Clear();
+
+            cbApartamento.DataSource = apartamentos;
+            cbApartamento.ValueMember = "NumeroApartamento";
+        }
+        public void carregarCampos(Usuario usuario)
+        {
+            txtId.Text = Convert.ToString(usuario.Id);
+            txtNomeValor.Text = usuario.Nome;
+            txtSenhaValor.Text = usuario.Senha;
+
         }
 
         private void email_Click(object sender, EventArgs e)
@@ -41,19 +71,37 @@ namespace condominio_salao_festas.view
 
         private void cadastrar_Click(object sender, EventArgs e)
         {
+
             Usuario morador = new Usuario();
+            try
+            {
+                string mensagem = null;
+                morador.Nome = txtNomeValor.Text;
+                morador.Senha = txtSenhaValor.Text;
+                Apartamento apartamento = this.cbApartamento.SelectedItem as Apartamento;
+                morador.ApartamentoRef = new Apartamento("");
+                morador.ApartamentoRef = apartamento;
+                if (escolhaSelecao.Equals(EscolhaForm.Alterar))
+                {
+                    morador.Id = Convert.ToInt32(txtId.Text);
+                    repositorio.Update(morador);
+                    mensagem = "Morador atualizado";
 
-            morador.Nome = txtNomeValor.Text;
+                }
+                else
+                {
 
-            var apartamento = repositorioAp.SelectNumeroAp(this.txtApartamentoValor.Text);
+                    repositorio.Insert(morador);
+                    mensagem = "Morador cadastrado";
+                }
 
-            if(apartamento == null)
-                apartamento = new Apartamento(txtApartamentoValor.Text);
-
-            morador.ApartamentoRef = apartamento;
-            morador.Senha = txtSenhaValor.Text;
-
-            repositorio.Insert(morador);
+                MessageBox.Show(mensagem);
+                this.Close();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Preencha os campos corretamete", " Falta de dados ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
             this.Close();
         }
@@ -84,6 +132,26 @@ namespace condominio_salao_festas.view
         }
 
         private void CadastroMorador_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnListaMoradoresMenu_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCadastrarMoradorMenu_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnInicialAdmin_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbApartamento_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
