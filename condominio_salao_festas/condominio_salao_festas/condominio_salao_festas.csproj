@@ -172,6 +172,7 @@
   <ItemGroup>
     <Compile Include="Dominio\Entidades\Agendamento.cs" />
     <Compile Include="Dominio\Entidades\Apartamento.cs" />
+    <Compile Include="Dominio\Enums\EscolhaForm.cs" />
     <Compile Include="Dominio\Interfaces\IRepository.cs" />
     <Compile Include="Infra.Data\ApartamentoRepository.cs" />
     <Compile Include="Infra.Data\ApplicationDBContext.cs" />
@@ -194,6 +195,12 @@
     <Compile Include="view\CadastroAdmin.Designer.cs">
       <DependentUpon>CadastroAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="view\CadastroApartamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\CadastroApartamento.Designer.cs">
+      <DependentUpon>CadastroApartamento.cs</DependentUpon>
+    </Compile>
     <Compile Include="view\CadastroMorador.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -211,6 +218,24 @@
     </Compile>
     <Compile Include="view\CancelarAgendamento.Designer.cs">
       <DependentUpon>CancelarAgendamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\GerenciarApartamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\GerenciarApartamento.Designer.cs">
+      <DependentUpon>GerenciarApartamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\GerenciarMorador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\GerenciarMorador.Designer.cs">
+      <DependentUpon>GerenciarMorador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\GerenciarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\GerenciarUsuario.Designer.cs">
+      <DependentUpon>GerenciarUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="view\Inicial.cs">
       <SubType>Form</SubType>
@@ -235,11 +260,23 @@
     <EmbeddedResource Include="view\CadastroAdmin.resx">
       <DependentUpon>CadastroAdmin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="view\CadastroApartamento.resx">
+      <DependentUpon>CadastroApartamento.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="view\CadastroMorador.resx">
       <DependentUpon>CadastroMorador.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="view\CancelarAgendamento.resx">
       <DependentUpon>CancelarAgendamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\GerenciarApartamento.resx">
+      <DependentUpon>GerenciarApartamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\GerenciarMorador.resx">
+      <DependentUpon>GerenciarMorador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\GerenciarUsuario.resx">
+      <DependentUpon>GerenciarUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="view\Inicial.resx">
       <DependentUpon>Inicial.cs</DependentUpon>

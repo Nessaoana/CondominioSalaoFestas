@@ -1,4 +1,5 @@
-﻿using condominio_salao_festas.model;
+﻿using condominio_salao_festas.Dominio.Enums;
+using condominio_salao_festas.model;
 using condominio_salao_festas.model.db_context;
 using condominio_salao_festas.view;
 using System;
@@ -44,7 +45,7 @@ namespace condominio_salao_festas
 
         private void button1_Click(object sender, EventArgs e)
         {
-            CadastroAdmin cadastro = new CadastroAdmin();
+            CadastroAdmin cadastro = new CadastroAdmin(EscolhaForm.Cadastrar, null);
 
             cadastro.ShowDialog();
 
@@ -63,9 +64,22 @@ namespace condominio_salao_festas
         }
 
         private void button1_Click_1(object sender, EventArgs e)
-        {
-            CadastroMorador cadastroMorador = new CadastroMorador();
+        {   
+
+            GerenciarMorador cadastroMorador = new GerenciarMorador();
             cadastroMorador.Show();
+        }
+
+        private void btnGerenciar_Click(object sender, EventArgs e)
+        {
+            GerenciarUsuario gerenciarUsuario = new GerenciarUsuario();
+            gerenciarUsuario.Show();
+        }
+
+        private void btnApartamentos_Click(object sender, EventArgs e)
+        {
+            GerenciarApartamento gerenciarApartamento = new GerenciarApartamento();
+            gerenciarApartamento.Show();
         }
     }
 }
