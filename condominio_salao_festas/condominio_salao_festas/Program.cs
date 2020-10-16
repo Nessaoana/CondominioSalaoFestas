@@ -1,4 +1,5 @@
-﻿using condominio_salao_festas.view;
+using condominio_salao_festas.view;
+using condominio_salao_festas.model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,7 @@ namespace condominio_salao_festas
     static class Program
     {
         public static bool adm = false;
+        public static Usuario user;
         /// <summary>
         /// Ponto de entrada principal para o aplicativo.
         /// </summary>

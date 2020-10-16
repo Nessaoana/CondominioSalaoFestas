@@ -1,4 +1,4 @@
-﻿using condominio_salao_festas.Dominio.Entidades;
+using condominio_salao_festas.Dominio.Entidades;
 using condominio_salao_festas.Infra.Data;
 using condominio_salao_festas.model;
 using condominio_salao_festas.model.db_context;
@@ -27,7 +27,16 @@ namespace condominio_salao_festas.view
         }
         public void getApartamentos()
         {
-            List<Usuario> moradores = repositorioMorador.SelectAll().ToList();
+            List<Usuario> moradores = new List<Usuario>();
+            if (!Program.adm)
+            {
+                moradores.Add(Program.user);
+            }
+            else
+            {
+                moradores = repositorioMorador.SelectAll().ToList();
+            }
+            
             cbMoradores.Items.Clear();
 
             cbMoradores.DataSource = moradores;

@@ -1,4 +1,4 @@
-﻿using condominio_salao_festas.Dominio.Entidades;
+using condominio_salao_festas.Dominio.Entidades;
 using condominio_salao_festas.model.db_context;
 using System;
 using System.Collections.Generic;
@@ -23,9 +23,6 @@ namespace condominio_salao_festas.view
 
         private void frmCancelarAgendamento_Load(object sender, EventArgs e)
         {
-            this.txtNomeCompleto.Text = "Rafael Peinado da Silva";
-            this.txtApartamento.Text = "3";
-
             atualizarTabela();
         }
 

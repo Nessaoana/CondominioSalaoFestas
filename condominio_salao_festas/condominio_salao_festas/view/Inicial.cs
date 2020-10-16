@@ -1,4 +1,4 @@
-﻿using condominio_salao_festas.Dominio.Enums;
+using condominio_salao_festas.Dominio.Enums;
 using condominio_salao_festas.model;
 using condominio_salao_festas.model.db_context;
 using condominio_salao_festas.view;
@@ -29,6 +29,7 @@ namespace condominio_salao_festas
             {
                 this.lblUser.Text = "Usuário logado: " + user.Nome;
                 Program.adm = true;
+                Program.user = null;
             }
             else
             {
@@ -36,6 +37,7 @@ namespace condominio_salao_festas
                 this.btnGerenciar.Visible = false;
                 this.btnApartamentos.Visible = false;
                 this.cadastrarMorador.Visible = false;
+                Program.user = user1;
             }
         }
 
