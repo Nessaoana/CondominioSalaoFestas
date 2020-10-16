@@ -69,7 +69,7 @@ namespace condominio_salao_festas.view
                 {
                     repositorio.Insert(usuario);
                     mensagem = "Usuário cadastrado";
-                }
+                }   
       
                 MessageBox.Show(mensagem);
                 this.Close();

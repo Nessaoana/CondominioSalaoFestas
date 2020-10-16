@@ -18,6 +18,7 @@ namespace condominio_salao_festas.view
         public frmCancelarAgendamento()
         {
             InitializeComponent();
+            this.btnCancelarAgendamento.Visible = Program.adm;
         }
 
         private void frmCancelarAgendamento_Load(object sender, EventArgs e)

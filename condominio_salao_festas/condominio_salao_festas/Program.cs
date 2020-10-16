@@ -1,4 +1,5 @@
-﻿using System;
+﻿using condominio_salao_festas.view;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -8,6 +9,7 @@ namespace condominio_salao_festas
 {
     static class Program
     {
+        public static bool adm = false;
         /// <summary>
         /// Ponto de entrada principal para o aplicativo.
         /// </summary>
@@ -16,7 +18,7 @@ namespace condominio_salao_festas
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new Login());
         }
     }
 }

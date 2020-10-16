@@ -17,10 +17,26 @@ namespace condominio_salao_festas
     public partial class Form1 : Form
     {
         private ApplicationDBContext ctx = new ApplicationDBContext();
+        private UsuarioAdmin userLogged;
+        private Usuario user;
 
-        public Form1()
+        public Form1(UsuarioAdmin user, Usuario user1)
         {
             InitializeComponent();
+            this.userLogged = user;
+            this.user = user1;
+            if (user != null)
+            {
+                this.lblUser.Text = "Usuário logado: " + user.Nome;
+                Program.adm = true;
+            }
+            else
+            {
+                this.lblUser.Text = "Usuário logado: " + user1.Nome;
+                this.btnGerenciar.Visible = false;
+                this.btnApartamentos.Visible = false;
+                this.cadastrarMorador.Visible = false;
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -35,12 +51,13 @@ namespace condominio_salao_festas
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            Login login = new Login();
+            login.Show();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -86,6 +103,11 @@ namespace condominio_salao_festas
         {
             frmCancelarAgendamento cancelarAgendamento = new frmCancelarAgendamento();
             cancelarAgendamento.Show();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
